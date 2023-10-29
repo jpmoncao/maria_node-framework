@@ -1,0 +1,15 @@
+{
+    "swagger": "2.0",
+    "openai": "3.1.0",
+    "info": {
+        "title": "",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "",
+            "description": ""
+        }
+    ],
+    "paths": {}
+}

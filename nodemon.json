@@ -1,0 +1,8 @@
+{
+    "watch": ["src"],
+    "ext": "ts",
+    "execMap": {
+      "ts": "node --loader ts-node/esm --experimental-specifier-resolution=node -r tsconfig-paths/register src/index.ts"
+    },
+    "exec": "tsc --outDir ./dist && node dist/index.js --inspect"
+  }
