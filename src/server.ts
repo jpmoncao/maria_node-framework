@@ -6,6 +6,12 @@ import swaggerFile from './swagger.json' assert { type: 'json' };
 //Dependências
 import cors from 'cors';
 import dotenv from 'dotenv';
+// Rotas
+import UsersRouter from './routes/UsersRouter.js';
+import TuitesRouter from './routes/TuitesRouter.js';
+// Controllers
+import UsersController from './controllers/UsersController.js';
+import TuitesController from './controllers/TuitesController.js';
 
 class App {
     private PORT: Number;
@@ -25,8 +31,11 @@ class App {
         this.app.use(cors());
 
         // Rotas
-        // const ExampleRouter = new ExampleRouter();
-        // this.app.use('/examples', ExampleRouter.getRouter());
+        const usersRouter = new UsersRouter(new UsersController());
+        this.app.use('/users', usersRouter.getRouter());
+
+        const tuitesRouter = new TuitesRouter(new TuitesController());
+        this.app.use('/tuites', tuitesRouter.getRouter());
     }
 
     init() {
