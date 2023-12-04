@@ -1,7 +1,7 @@
-import { Examples } from "../models/Examples.js";
+import { User } from "../models/User.js";
 
 export const models = {
     sync: function () {
-        Examples.sync();
+        User.sync();
     }
 }
