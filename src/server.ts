@@ -7,9 +7,9 @@ import swaggerFile from './swagger.json' assert { type: 'json' };
 import cors from 'cors';
 import dotenv from 'dotenv';
 //Controllers
-import ExampleController from './controllers/ExampleController.js';
+import UsersController from './controllers/UsersController.js';
 //Rotas
-import ExampleRouter from './routes/ExampleRouter.js';
+import UsersRouter from './routes/UsersRouter.js';
 
 class App {
     private PORT: Number;
@@ -29,9 +29,9 @@ class App {
         this.app.use(cors());
 
         // Rotas
-        const exampleController = new ExampleController();
-        const exampleRouter = new ExampleRouter(exampleController);
-        this.app.use('/user', exampleRouter.getRouter());
+        const usersController = new UsersController();
+        const usersRouter = new UsersRouter(usersController);
+        this.app.use('/users', usersRouter.getRouter());
     }
 
     init() {
